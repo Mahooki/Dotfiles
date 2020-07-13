@@ -85,9 +85,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/sainnhe/gruvbox-material'
 
-Plug 'https://github.com/machakann/vim-highlightedyank'
+Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = 200
 
 " lean & mean status/tabline for vim that's light as air
@@ -120,7 +119,13 @@ Plug 'Yggdroot/indentLine'
 " Syntax checking hacks for vim
 " https://github.com/scrooloose/syntastic
 Plug 'scrooloose/syntastic'
-Plug 'altercation/vim-colors-solarized'   " clean color scheme
+
+" Colorschemes
+Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
+Plug 'tbastos/vim-lua'
+
 Plug 'bronson/vim-trailing-whitespace'    " trailing whitespace
 Plug 'scrooloose/nerdcommenter'           " quick commenting
 let g:NERDSpaceDelims = 1
@@ -129,6 +134,8 @@ Plug 'scrooloose/nerdtree'                " file browser
 Plug 'rizzatti/dash.vim'                  " ?
 Plug 'tpope/vim-unimpaired'               " Allows for use of [e ]e etc...
 Plug 'gregsexton/MatchTag'                " Match closing tags for HTML
+
+Plug 'tpope/vim-fugitive'                 " auto complete
 
 " Brief help
 " :PlugList          - list configured plugins
@@ -145,7 +152,7 @@ filetype plugin indent on
 "                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""
 " A list of color schemes to use, in the order you want to use them
-let s:schemes = ["gruvbox-material", "solarized", "molokai", "default"]
+let s:schemes = ["gruvbox-material", "solarized", "default", "molokai", "torte", "desert", "koehler", "slate"]
 
 " Fonts section.  First, create a list of desired fonts for GUI vims.
 let s:fonts = ["Fira Code", "Source Code Pro", "Menlo Regular", "Consolas", "Inconsolata", "Lucida_Console", "Monospace"]

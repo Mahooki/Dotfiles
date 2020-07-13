@@ -29,12 +29,16 @@ source $ZSH/oh-my-zsh.sh
 alias open="xdg-open"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias pipes='pipes.sh -t 3 -r 0'
+alias diff="kitty +kitten diff"
 
 eval `dircolors ~/.dircolors`
-eval `ssh-agent -s`
+eval `ssh-agent -s > /dev/null 2>&1`
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv time)
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir vcs time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv)
+
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_left"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3

@@ -116,8 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Use vi mode
 set -o vi
 
 if test -t 1; then
-  exec zsh
+    exec zsh
 fi
