@@ -1,8 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Path to your oh-my-zsh installation.
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -22,23 +23,48 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-autosuggestions
+  fast-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 
+
+# Enable accepting autosuggestions
+bindkey '^J' forward-word
+bindkey -v
+bindkey '^ ' autosuggest-accept
+
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(end-of-line vi-end-of-line)
+
+# Remove duplicates from history
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+
+# Disable sound
+unsetopt beep
+
+# Disable tty flow control, allows vim to use '<Ctrl>S'
+unsetopt flow_control && stty -ixon
+
+# Alises
 alias open="xdg-open"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias pipes='pipes.sh -t 3 -r 0'
 alias diff="kitty +kitten diff"
 
+# Solarized dir colors
 eval `dircolors ~/.dircolors`
+
+# start ssh-agent with no output
 eval `ssh-agent -s > /dev/null 2>&1`
 
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir vcs)
+# Disable non end-of-line autosuggest accept widgets
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#282828,bg=#ebdbb2,bold"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir vcs time)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv)
-
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_left"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
@@ -50,6 +76,7 @@ POWERLEVEL9K_VCS_LOADING_FOREGROUND="black"
 # Use vi terminal mode
 set -o vi
 
-source /usr/share/nvm/init-nvm.sh
+# Remove duplicates from environment variables
+typeset -U PATH
 
-neofetch
+source /usr/share/nvm/init-nvm.sh

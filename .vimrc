@@ -127,15 +127,10 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'tbastos/vim-lua'
 
 Plug 'bronson/vim-trailing-whitespace'    " trailing whitespace
-Plug 'scrooloose/nerdcommenter'           " quick commenting
-let g:NERDSpaceDelims = 1
+Plug 'tpope/vim-commentary'               " Toggle comment with gcc
 
-Plug 'scrooloose/nerdtree'                " file browser
-Plug 'rizzatti/dash.vim'                  " ?
 Plug 'tpope/vim-unimpaired'               " Allows for use of [e ]e etc...
 Plug 'gregsexton/MatchTag'                " Match closing tags for HTML
-
-Plug 'tpope/vim-fugitive'                 " auto complete
 
 " Brief help
 " :PlugList          - list configured plugins
@@ -152,10 +147,10 @@ filetype plugin indent on
 "                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""
 " A list of color schemes to use, in the order you want to use them
-let s:schemes = ["gruvbox-material", "solarized", "default", "molokai", "torte", "desert", "koehler", "slate"]
+let s:schemes = ["gruvbox-material", "solarized", "default"]
 
 " Fonts section.  First, create a list of desired fonts for GUI vims.
-let s:fonts = ["Fira Code", "Source Code Pro", "Menlo Regular", "Consolas", "Inconsolata", "Lucida_Console", "Monospace"]
+let s:fonts = ["Fira Code", "Source Code Pro", "Consolas", "Monospace"]
 let s:win_font_size = "h12"
 let s:mac_font_size = "h12"
 let s:unix_font_size = "h12"
@@ -411,10 +406,10 @@ noremap <leader>Y "+yy
 noremap <leader>p "+p
 noremap <leader>P "+P
 
-" remap nerdcommenter toggle comment
-nmap <C-S-c> <plug>NERDCommenterToggle gv
-vmap <C-S-c> <plug>NERDCommenterToggle gv
-
+" Save with ctrl + s
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
 
 " ctags - Use Ctrl+[ to go back from tag instead of Ctrl+t
 "nnoremap <C-[> <C-t>
