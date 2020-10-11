@@ -1,0 +1,24 @@
+[includeIf "gitdir:$HOME/work/"]
+    path = .gitconfig-work
+[includeIf "gitdir:$HOME/personal/"]
+    path = .gitconfig-personal
+
+[core]
+  editor = code --wait
+	excludesfile = /mnt/c/Users/noahm/.gitignore_global
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	email = noahmccle@gmail.com
+	name = Noah McClelland

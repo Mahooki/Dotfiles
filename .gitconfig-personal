@@ -1,0 +1,5 @@
+[user]
+	name = Noah McClelland
+	email = noahmccle@gmail.com
+[core]
+    sshCommand = "ssh -i ~/.ssh/id_rsa_personal"
