@@ -3,7 +3,7 @@
 ## Setup
 
 ```
-git clone --bare https://github.com/Mahooki/dotfiles.git $HOME/.dotfiles
+git clone --bare git@github.com:Mahooki/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config status.showUntrackedFiles no
 ```
