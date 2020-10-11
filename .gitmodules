@@ -1,0 +1,3 @@
+[submodule "Pictures/wallpapers"]
+	path = $HOME/Pictures/wallpapers
+	url = git@github.com:Mahooki/wallpapers.git
