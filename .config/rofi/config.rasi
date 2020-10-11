@@ -1,0 +1,21 @@
+configuration {
+  theme: "gruvbox-dark";
+  modi: "drun,window,ssh,combi";
+  font: "Inter 14";
+  lines: 10;
+  columns: 2;
+  width: 45;
+  show-icons: true;
+  sidebar-mode: true;
+  m: "-4";
+  case-sensitive: false;
+  matching: "fuzzy";
+  terminal: "kitty";
+  kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+  kb-row-down: "Down,Control+j";
+  kb-accept-entry: "Return,KP_Enter";
+  kb-remove-to-eol: "Control+Shift+d";
+  kb-mode-next: "Control+Tab,Control+l";
+  kb-mode-previous: "Control+Shift+Tab,Control+h";
+  kb-remove-char-back: "BackSpace";
+}
