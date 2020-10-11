@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -25,13 +25,14 @@ plugins=(
   git
   zsh-autosuggestions
   fast-syntax-highlighting
+  # history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
 
 
 # Enable accepting autosuggestions
-bindkey '^J' forward-word
+bindkey '^O' forward-word
 bindkey -v
 bindkey '^ ' autosuggest-accept
 
@@ -54,6 +55,7 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias pipes='pipes.sh -t 3 -r 0'
 alias diff="kitty +kitten diff"
+alias ssh="kitty +kitten ssh"
 
 # Solarized dir colors
 eval `dircolors ~/.dircolors`
@@ -62,7 +64,7 @@ eval `dircolors ~/.dircolors`
 eval `ssh-agent -s > /dev/null 2>&1`
 
 # Disable non end-of-line autosuggest accept widgets
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#282828,bg=#ebdbb2,bold"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#a89984,bg=#3c3836,underline,bold"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir vcs time)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv)
 POWERLEVEL9K_STATUS_VERBOSE=false
