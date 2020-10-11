@@ -6,7 +6,7 @@ export EDITOR="vim"
 export VISUAL="vim"
 export TERMINAL="kitty"
 export BROWSER="chrome"
-# export WM="awesomewm"
+export WM="awesomewm"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -22,8 +22,3 @@ export SAVEHIST=1000			# Maximum events in history file
 # X11
 export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/xinitrc"
 
-# Oh my zsh
-export ZSH=$HOME/.oh-my-zsh
-
-# NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
