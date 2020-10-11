@@ -1,5 +1,25 @@
 # Dotfiles
 
+Dotfiles repository that is intended to be cloned bare with the working tree set to $HOME.
+This simplifies the process of configuring new OS installs.
+
+## Packages
+
+Installed packages can be backed up to and installed from a list with pacman or yay via:
+
+### Backup
+
+```bash
+pacman -Qqe > $HOME/.pacman-packages
+```
+
+### Restore
+
+```bash
+.config/zsh/.zhistory
+pacman -S --needed - < $HOME/.pacman-packages
+```
+
 ## Setup
 
 ```bash
