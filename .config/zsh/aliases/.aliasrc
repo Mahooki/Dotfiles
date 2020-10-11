@@ -33,15 +33,14 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # Backup and restores packages via listing all packages in a file
-alias backupyay='yay -Qqe > $HOME/yay.packages'
-alias restoreyay='yay -S --needed - < $HOME/yay.packages'
+alias backupyay='yay -Qqe > $HOME/.yay-packages'
+alias restoreyay='yay -S --needed - < $HOME/.yay-packages'
 
-alias backuppacman='pacman -Qqe > $HOME/pacman.packages'
-alias restorepacman='pacman -S --needed - < $HOME/pacman.packages'
-alias restorepacman-filter-foreign='pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort $HOME/pacman.packages))'
-alias restorepacman-remove-extras='pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort $HOME/pacman.packages))'
+alias backuppacman='pacman -Qqe > $HOME/.pacman-packages'
+alias restorepacman='pacman -S --needed - < $HOME/.pacman-packages'
+
+alias restorepacman-filter-foreign='pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort $HOME/.pacman-packages))'
 
 # Make sure the installed packages of your system match the list
 # and remove all the packages that are not mentioned in it:
-alias pacman='pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort $HOME/pacman.packages))'
-alias thing='pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort $HOME/pacman.packages))'
+alias restorepacman-remove-extras='pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort $HOME/.pacman-packages))'
