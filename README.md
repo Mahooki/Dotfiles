@@ -6,13 +6,13 @@ Contains my personal dotfiles for my Arch Linux installation. This repository is
 
 # Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Packages](#packages)
   - [Backup](#backup)
   - [Restore all official packages](#restore-all-official-packages)
 - [Setup](#setup)
 - [Example Usage](#example-usage)
 - [Update Submodules](#update-submodules)
+- [SSH and Git Config](#ssh-and-git-config)
 
 ## Packages
 
