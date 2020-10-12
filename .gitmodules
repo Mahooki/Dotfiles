@@ -12,4 +12,4 @@
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule ".config/zsh/custom/themes/powerlevel10k"]
 	path = .config/zsh/custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
+	url = https://gitee.com/romkatv/powerlevel10k.git
