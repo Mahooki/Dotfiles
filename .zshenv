@@ -19,6 +19,8 @@ export HISTFILE="$ZDOTDIR/.zhistory"	# History filepath
 export HISTSIZE=1000			# Maximum events for internal history
 export SAVEHIST=1000			# Maximum events in history file
 
+export ZSH="$ZDOTDIR/.oh-my-zsh"
+
 # X11
 export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/xinitrc"
 

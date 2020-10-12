@@ -1,9 +1,12 @@
 [submodule "/home/noahmccle/Pictures/wallpapers"]
 	path = /home/noahmccle/Pictures/wallpapers
 	url = git@github.com:Mahooki/wallpapers.git
-[submodule "/home/noahmccle/.config/zsh/.oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
-	path = /home/noahmccle/.config/zsh/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
-	url = https://github.com/zdharma/fast-syntax-highlighting.git
 [submodule "/home/noahmccle/.config/zsh/.oh-my-zsh"]
 	path = /home/noahmccle/.config/zsh/.oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "/home/noahmccle/.config/zsh/custom/plugins/fast-syntax-highlighting"]
+	path = /home/noahmccle/.config/zsh/custom/plugins/fast-syntax-highlighting
+	url = git clone https://github.com/zdharma/fast-syntax-highlighting.git
+[submodule "/home/noahmccle/.config/zsh/custom/plugins/zsh-autosuggestions"]
+	path = /home/noahmccle/.config/zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
