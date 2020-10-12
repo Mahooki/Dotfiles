@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=plank -n dock1
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Dock 1
