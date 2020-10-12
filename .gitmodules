@@ -4,3 +4,6 @@
 [submodule "/home/noahmccle/.config/zsh/.oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
 	path = /home/noahmccle/.config/zsh/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting.git
+[submodule "/home/noahmccle/.config/zsh/.oh-my-zsh"]
+	path = /home/noahmccle/.config/zsh/.oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
