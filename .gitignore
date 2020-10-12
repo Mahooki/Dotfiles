@@ -1,2 +1,3 @@
-~/.config/zsh/.zhistory
-~/.gitconfig-work
+.config/zsh/.zhistory
+.gitconfig-work
+.dotfiles
