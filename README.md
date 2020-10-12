@@ -72,3 +72,8 @@ will use [~/.gitconfig-work](.gitconfig-work).
 __This configuration expect these two ssh keys to be present__:
 - `~/.ssh/id_rsa_personal`
 - `~/.ssh/id_rsa_work`
+
+### Stage Only Tracked Files
+
+I found myself tempted to use `dotfiles add .` when checking changes in to source control. Instead,
+use `dotfiles add -u` to only stage files that are already tracked.
