@@ -1,3 +1,6 @@
 [submodule "/home/noahmccle/Pictures/wallpapers"]
 	path = /home/noahmccle/Pictures/wallpapers
 	url = git@github.com:Mahooki/wallpapers.git
+[submodule "/home/noahmccle/.config/zsh/.oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
+	path = /home/noahmccle/.config/zsh/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma/fast-syntax-highlighting.git
