@@ -17,10 +17,10 @@
 ;:set syn=dosini
 
 [global/wm]
-margin-top = 8
-margin-bottom = 8
-margin-left = 8
-margin-right = 8
+margin-top = 4
+margin-bottom = 4
+margin-left = 4
+margin-right = 4
 
 [colors]
 darkgray = ${xrdb:color8}
@@ -43,10 +43,10 @@ alert = ${colors.red}
 [bar/bar1]
 monitor = DP-0
 bottom = false
-width = 2546
+width = 2552
 height = 48
-offset-x = 8
-offset-y = 8
+offset-x = 4
+offset-y = 4
 locale = en_US.UTF-8
 enable-ipc = true
 
@@ -76,10 +76,10 @@ modules-right = network separator volume separator memory separator cpu
 [bar/bar2]
 monitor = DVI-D-0
 bottom = false
-width = 1906
+width = 1912
 height = 36
-offset-x = 8
-offset-y = 8
+offset-x = 4
+offset-y = 4
 locale = en_US.UTF-8
 enable-ipc = true
 
@@ -89,11 +89,11 @@ foreground = ${colors.foreground}
 border-size = 2
 border-color = ${colors.blue}
 
-font-0 = "Inter:size=14;2"
-font-1 = "Inter:size=16:weight=bold;2"
-font-2 = "FontAwesome5Free:size=18;2"
-font-3 = "FontAwesome5FreeSolid:size=18;2"
-font-4 = "SijiRegular:size=18;2"
+font-0 = "Inter:size=14;4"
+font-1 = "Inter:size=16:weight=bold;4"
+font-2 = "FontAwesome5Free:size=18;4"
+font-3 = "FontAwesome5FreeSolid:size=18;4"
+font-4 = "SijiRegular:size=18;4"
 
 margin-left = 2
 margin-right = 2
