@@ -1,27 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Copyright (c) 2009-2014 Seth Wright (seth@crosse.org)
-"
-" Permission to use, copy, modify, and distribute this software for any
-" purpose with or without fee is hereby granted, provided that the above
-" copyright notice and this permission notice appear in all copies.
-"
-" THE SOFTWARE IS PROVIDED 'AS IS' AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
-" IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Things to note:
-" * The following keys and their functions are defined below.  This
-"   doesn't include everything; mostly just the 'convenience' keys.
-"
-"   F4 - toggle search highlighting
-"   Enter - in normal mode, disable search highlighting temporarily
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Adapted for use by Noah McClelland :)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""
+"      VIMRC     "
+""""""""""""""""""
 
 " This file isn't compatible with vi.
 set nocompatible
@@ -36,10 +15,10 @@ endif
 function! GetOperatingSystem()
     let g:os = {}
     let l:os_types = {}
-    let l:os_types.win    = ["win16", "win32", "win32unix", "win64", "win95"]
+    let l:os_types.win    = ["win64"]
     let l:os_types.mac    = ["mac", "macunix"]
     let l:os_types.unix   = ["unix"]  " Note that MacVim also identifies as unix
-    let l:os_types.other  = ["amiga", "beos", "dos16", "dos32", "os2", "qnx", "vms"]
+    let l:os_types.other  = ["vms"]
     let l:os_types.all    = l:os_types.win + l:os_types.mac + l:os_types.unix + l:os_types.other
 
     for g:os.fullname in l:os_types.all
@@ -69,9 +48,6 @@ function! HasColorScheme(name)
      let pat = "colors/" . a:name . ".vim"
      return !empty(globpath(&runtimepath, pat))
 endfunction
-
-set t_Co=256
-set t_ut=
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 "                                               "
@@ -124,11 +100,10 @@ Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
-Plug 'tbastos/vim-lua'
 
+Plug 'tbastos/vim-lua'
 Plug 'bronson/vim-trailing-whitespace'    " trailing whitespace
 Plug 'tpope/vim-commentary'               " Toggle comment with gcc
-
 Plug 'tpope/vim-unimpaired'               " Allows for use of [e ]e etc...
 Plug 'gregsexton/MatchTag'                " Match closing tags for HTML
 
@@ -137,7 +112,6 @@ Plug 'gregsexton/MatchTag'                " Match closing tags for HTML
 " :PlugInstall(!)    - install (update) plugins
 " :PlugClean(!)      - confirm (or auto-approve) removal of unused plugins
 call plug#end()
-
 
 filetype plugin indent on
 

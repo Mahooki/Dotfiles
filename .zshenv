@@ -1,3 +1,7 @@
+##################
+#     ZSHENV     #
+##################
+
 # Environmetal variables are set here.
 
 # Default programs:
@@ -6,7 +10,7 @@ export EDITOR="vim"
 export VISUAL="vim"
 export TERMINAL="kitty"
 export BROWSER="chrome"
-export WM="awesomewm"
+export WM="bspwm"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
