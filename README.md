@@ -1,23 +1,34 @@
 # Dotfiles
 
-Dotfiles repository that is intended to be cloned bare with the working tree set to $HOME.
-This simplifies the process of configuring new OS installs.
+Contains my personal dotfiles for my Arch Linux installation. This repository is intended to be cloned bare with the working tree set to $HOME without showing untracked files. This makes OS configuration as portable as possible.
+
+![Gruvbox Neofetch](Pictures/README/Neofetch.png)
+
+# Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Packages](#packages)
+  - [Backup](#backup)
+  - [Restore all official packages](#restore-all-official-packages)
+- [Setup](#setup)
+- [Example Usage](#example-usage)
+- [Update Submodules](#update-submodules)
 
 ## Packages
 
-Installed packages can be backed up to and installed from a list with pacman or yay via:
+
+Package lists for pacman and yay can be found in .pkglist.
 
 ### Backup
 
 ```bash
-pacman -Qqe > $HOME/.pacman-packages
+pacman -Qqe > $HOME/.pkg-list/pacman-all
 ```
 
-### Restore
+### Restore all official packages
 
 ```bash
-.config/zsh/.zhistory
-pacman -S --needed - < $HOME/.pacman-packages
+pacman -S --needed - < $HOME/.pkg-list/pacman-all
 ```
 
 ## Setup
@@ -26,6 +37,7 @@ pacman -S --needed - < $HOME/.pacman-packages
 git clone --bare git@github.com:Mahooki/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config status.showUntrackedFiles no
+dotfiles checkout
 ```
 
 ## Example Usage
@@ -37,3 +49,26 @@ dotfiles commit -m "Add vimrc"
 dotfiles push
 ```
 
+Keep file but remove from repository:
+
+```bash
+dotfiles rm --cached ~/.some_file
+```
+
+## Update Submodules
+
+```bash
+dotfiles submodule update --recursive --remote
+```
+
+## SSH and Git Config
+
+I have checked in my personal [~/.ssh/config](.ssh/config) with local hostnames. Remove if you are not me :)
+
+My [~/.gitconfig](.gitconfig) switches the git user and ssh key depending on the file path of the repository.
+Anything repositories under `~/personal` will use [~/.gitconfig-personal](.gitconfig-personal) and any under `~/work`
+will use [~/.gitconfig-work](.gitconfig-work).
+
+__This configuration expect these two ssh keys to be present__:
+- `~/.ssh/id_rsa_personal`
+- `~/.ssh/id_rsa_work`

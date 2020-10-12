@@ -24,6 +24,7 @@ alias kittyrc='$EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf'
 alias polybarrc='$EDITOR $XDG_CONFIG_HOME/polybar/config'
 alias rangerrc='$EDITOR $XDG_CONFIG_HOME/ranger/rc.conf'
 alias rofirc='$EDITOR $XDG_CONFIG_HOME/rofi/config.rasi'
+alias gitrc='$EDITOR $HOME/.gitconfig'
 
 # Navigation:
 alias d='dirs -v'
@@ -44,3 +45,5 @@ alias restorepacman-filter-foreign='pacman -S --needed $(comm -12 <(pacman -Slq 
 # Make sure the installed packages of your system match the list
 # and remove all the packages that are not mentioned in it:
 alias restorepacman-remove-extras='pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort $HOME/.pacman-packages))'
+
+compdef dotfiles='git'
