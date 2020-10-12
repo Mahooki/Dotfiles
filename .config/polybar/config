@@ -17,10 +17,10 @@
 ;:set syn=dosini
 
 [global/wm]
-#margin-top = 8
-#margin-bottom = 8
-#margin-left = 8
-#margin-right = 8
+margin-top = 8
+margin-bottom = 8
+margin-left = 8
+margin-right = 8
 
 [colors]
 darkgray = ${xrdb:color8}
@@ -40,44 +40,71 @@ primary = ${colors.yellow}
 secondary = ${colors.green}
 alert = ${colors.red}
 
-[bar/bar]
-monitor = DVI-D-0
+[bar/bar1]
+monitor = DP-0
 bottom = false
-width = 100%
-height = 40
-offset-x = 0
-offset-y = 0
+width = 2546
+height = 48
+offset-x = 8
+offset-y = 8
 locale = en_US.UTF-8
 enable-ipc = true
-padding-left = 2
-padding-right = 2
-
-module-margin-top = 1
-module-margin-bottom = 1
-module-margin-right = 1
-module-margin-left = 1
-
-modules-left = powermenu separator filesystem
-modules-center = date
-modules-right = network separator volume separator memory separator cpu
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-underline-size = 0
-underline-color = ${colors.white}
+border-size = 2
+border-color = ${colors.blue}
 
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 0
-tray-transparent = false
-tray-scale = 1.0
-font-0 = "Inter:size=14"
-font-1 = "Inter:size=16:weight=bold"
-font-2 = "FontAwesome5Free:size=18"
-font-3 = "FontAwesome5FreeSolid:size=18"
-font-4 = "SijiRegular:size=18"
+font-0 = "Inter:size=16;4"
+font-1 = "Inter:size=20:weight=bold;4"
+font-2 = "FontAwesome5Free:size=24;4"
+font-3 = "FontAwesome5FreeSolid:size=24;4"
+font-4 = "SijiRegular:size=24;4"
+
+margin-left = 4
+margin-right = 4
+padding-left = 4
+padding-right = 4
+
+module-margin-right = 1
+module-margin-left = 1
+modules-left = powermenu separator filesystem
+modules-center = date
+modules-right = network separator volume separator memory separator cpu
+
+[bar/bar2]
+monitor = DVI-D-0
+bottom = false
+width = 1906
+height = 36
+offset-x = 8
+offset-y = 8
+locale = en_US.UTF-8
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 2
+border-color = ${colors.blue}
+
+font-0 = "Inter:size=14;2"
+font-1 = "Inter:size=16:weight=bold;2"
+font-2 = "FontAwesome5Free:size=18;2"
+font-3 = "FontAwesome5FreeSolid:size=18;2"
+font-4 = "SijiRegular:size=18;2"
+
+margin-left = 2
+margin-right = 2
+padding-left = 2
+padding-right = 2
+
+module-margin-right = 1
+module-margin-left = 1
+modules-left = powermenu separator filesystem
+modules-center = date
+modules-right = network separator volume separator memory separator cpu
 
 [module/powermenu]
 type = custom/menu
