@@ -31,6 +31,7 @@ alias polybarrc='$EDITOR $XDG_CONFIG_HOME/polybar/config'
 alias rangerrc='$EDITOR $XDG_CONFIG_HOME/ranger/rc.conf'
 alias rofirc='$EDITOR $XDG_CONFIG_HOME/rofi/config.rasi'
 alias gitrc='$EDITOR $HOME/.gitconfig'
+alias xinitrc='$EDITOR $HOME/.xinitrc'
 
 # Navigation:
 alias d='dirs -v'

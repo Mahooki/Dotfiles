@@ -1,6 +1,3 @@
-##################
-#   ROFI CONFIG  #
-##################
 
 configuration {
   theme: "gruvbox-dark";

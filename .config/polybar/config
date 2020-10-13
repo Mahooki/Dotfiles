@@ -17,10 +17,10 @@
 ;:set syn=dosini
 
 [global/wm]
-margin-top = 4
-margin-bottom = 4
-margin-left = 4
-margin-right = 4
+margin-top = 0
+margin-bottom = 0
+margin-left = 0
+margin-right = 0
 
 [colors]
 darkgray = ${xrdb:color8}
@@ -33,9 +33,10 @@ blue = ${xrdb:color4}
 yellow = ${xrdb:color3}
 green = ${xrdb:color2}
 background = ${xrdb:background}
-background-alt = #1d2021
+background-hard = ${xrdb:background-hard}
+background-soft = ${xrdb:background-soft}
 foreground = ${xrdb:foreground}
-foreground-alt = #fbf1c7
+foreground-soft = ${xrdb:foreground-soft}
 primary = ${colors.yellow}
 secondary = ${colors.green}
 alert = ${colors.red}
@@ -43,10 +44,10 @@ alert = ${colors.red}
 [bar/bar1]
 monitor = DP-0
 bottom = false
-width = 2552
-height = 48
-offset-x = 4
-offset-y = 4
+width = 2544
+height = 40
+offset-x = 8
+offset-y = 8
 locale = en_US.UTF-8
 enable-ipc = true
 
@@ -54,32 +55,32 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 border-size = 2
-border-color = ${colors.blue}
+border-color = ${colors.background-hard}
 
-font-0 = "Inter:size=16;4"
-font-1 = "Inter:size=20:weight=bold;4"
-font-2 = "FontAwesome5Free:size=24;4"
-font-3 = "FontAwesome5FreeSolid:size=24;4"
-font-4 = "SijiRegular:size=24;4"
+font-0 = "Inter:size=14;4"
+font-1 = "Inter:size=18:weight=bold;4"
+font-2 = "FontAwesome5Free:size=22;4"
+font-3 = "FontAwesome5FreeSolid:size=22;4"
+font-4 = "SijiRegular:size=22;4"
 
-margin-left = 4
-margin-right = 4
-padding-left = 4
-padding-right = 4
+margin-left = 2
+margin-right = 2
+padding-left = 2
+padding-right = 2
 
 module-margin-right = 1
 module-margin-left = 1
-modules-left = powermenu separator filesystem
+modules-left = powermenu separator filesystem separator bspwm
 modules-center = date
 modules-right = network separator volume separator memory separator cpu
 
 [bar/bar2]
 monitor = DVI-D-0
 bottom = false
-width = 1912
-height = 36
-offset-x = 4
-offset-y = 4
+width = 1904
+height = 30
+offset-x = 8
+offset-y = 8
 locale = en_US.UTF-8
 enable-ipc = true
 
@@ -87,7 +88,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 border-size = 2
-border-color = ${colors.blue}
+border-color = ${colors.background-hard}
 
 font-0 = "Inter:size=14;4"
 font-1 = "Inter:size=16:weight=bold;4"
@@ -102,7 +103,7 @@ padding-right = 2
 
 module-margin-right = 1
 module-margin-left = 1
-modules-left = powermenu separator filesystem
+modules-left = powermenu separator filesystem separator bspwm
 modules-center = date
 modules-right = network separator volume separator memory separator cpu
 
@@ -164,6 +165,11 @@ label-volume-foreground = ${colors.foreground}
 label-muted =  mute
 format-muted = <label-muted>
 format-muted-padding = 3
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
 
 [module/network]
 type = internal/network
