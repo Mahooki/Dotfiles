@@ -74,6 +74,8 @@ modules-left = powermenu separator filesystem separator bspwm
 modules-center = date
 modules-right = network separator volume separator memory separator cpu
 
+wm-restack = bspwm
+
 [bar/bar2]
 monitor = DVI-D-0
 bottom = false
@@ -107,6 +109,8 @@ modules-left = powermenu separator filesystem separator bspwm
 modules-center = date
 modules-right = network separator volume separator memory separator cpu
 
+wm-restack = bspwm
+
 [module/powermenu]
 type = custom/menu
 expand-right = true
@@ -120,7 +124,7 @@ label-separator = 
 label-separator-foreground = ${colors.primary}
 
 menu-0-0 = 
-renu-0-0-exec = systemctl reboot
+menu-0-0-exec = systemctl reboot
 menu-0-0-foreground = ${colors.secondary}
 menu-0-1 = 
 menu-0-1-exec = systemctl poweroff
