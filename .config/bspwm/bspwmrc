@@ -5,7 +5,7 @@
 
 ### Rules ###
 # bspc rule -a Chrome desktop='^2'
-bspc rule -a Plank layer=above manage=on border=off
+# bspc rule -a Plank layer=above manage=on border=off
 
 ### Autostart ###
 pgrep -x sxhkd > /dev/null || sxhkd &
@@ -19,6 +19,9 @@ if [[ $(hostname) == 'noah-arch-desktop' ]]; then
   bspc monitor DVI-D-0 -d 7 8 9 0
 fi
 
+# COMPOSITOR: start picom
+# picom &
+
 xrandr --output DP-0 --primary --mode 2560x1440 --rate 144 \
   --output DVI-D-0 --mode 1920x1080 --right-of DP-0 --rate 144
 
@@ -28,7 +31,18 @@ feh --bg-scale --no-fehbg ~/Pictures/wallpapers/arch-dark-side.jpeg
 # POLYBAR: Kill prior instances and launch polybars
 $HOME/.config/polybar/launch.sh
 
-# PLANK: Start plank docks
+# PLANK: Kill prior instances and launch plank docks
+
+# Terminate already running bar instances
+# killall -q plank
+
+# Wait until the processes have been shut down
+# while pgrep -u $UID -x plank >/dev/null; do sleep 1; done
+
+# Launch dock1 and dock2
+# plank -n dock1 &
+# plank -n dock2 &
+
 $HOME/.config/plank/launch.sh
 
 ### Global settings ###
@@ -72,11 +86,7 @@ bspc config gapless_monocle true
 
 ### Other settings ###
 
-### Compton ###
-
-# Specify refresh rate of the screen.
-# If not specified or 0, compton will try detecting this with X RandR extension.
-refresh-rate = 0;
+### Picom ###
 
 # Set VSync method. VSync methods currently available:
 # none: No VSync
@@ -86,7 +96,7 @@ refresh-rate = 0;
 # opengl-swc: Try to VSync with SGI_swap_control OpenGL extension. Only work on some drivers. Works only with GLX backend. Known to be most effective on many drivers. Does not actually control paint timing, only buffer swap is affected, so it doesn’t have the effect of --sw-opti unlike other methods. Experimental.
 # opengl-mswc: Try to VSync with MESA_swap_control OpenGL extension. Basically the same as opengl-swc above, except the extension we use.
 # (Note some VSync methods may not be enabled at compile time.)
-vsync = "none";
+vsync = "opengl-oml";
 
 # Painting on X Composite overlay window. Recommended.
 paint-on-overlay = true;

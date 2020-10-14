@@ -63,6 +63,8 @@ font-2 = "FontAwesome5Free:size=22;4"
 font-3 = "FontAwesome5FreeSolid:size=22;4"
 font-4 = "SijiRegular:size=22;4"
 
+cursor-click = pointer
+
 margin-left = 2
 margin-right = 2
 padding-left = 2
@@ -70,9 +72,9 @@ padding-right = 2
 
 module-margin-right = 1
 module-margin-left = 1
-modules-left = powermenu separator filesystem separator bspwm
+modules-left = filesystem separator bspwm
 modules-center = date
-modules-right = network separator volume separator memory separator cpu
+modules-right = network separator volume separator memory separator cpu separator powermenu
 
 wm-restack = bspwm
 
@@ -98,6 +100,8 @@ font-2 = "FontAwesome5Free:size=18;4"
 font-3 = "FontAwesome5FreeSolid:size=18;4"
 font-4 = "SijiRegular:size=18;4"
 
+cursor-click = pointer
+
 margin-left = 2
 margin-right = 2
 padding-left = 2
@@ -105,9 +109,9 @@ padding-right = 2
 
 module-margin-right = 1
 module-margin-left = 1
-modules-left = powermenu separator filesystem separator bspwm
+modules-left = filesystem separator bspwm
 modules-center = date
-modules-right = network separator volume separator memory separator cpu
+modules-right = network separator volume separator memory separator cpu separator powermenu
 
 wm-restack = bspwm
 
@@ -126,7 +130,7 @@ label-separator-foreground = ${colors.primary}
 menu-0-0 = 
 menu-0-0-exec = systemctl reboot
 menu-0-0-foreground = ${colors.secondary}
-menu-0-1 = 
+menu-0-1 = 
 menu-0-1-exec = systemctl poweroff
 menu-0-1-foreground = ${colors.secondary}
 
@@ -172,7 +176,6 @@ format-muted-padding = 3
 
 [module/bspwm]
 type = internal/bspwm
-
 pin-workspaces = true
 
 [module/network]
@@ -182,16 +185,12 @@ interface = enp5s0
 interval = 3
 accumulate-stats = true
 
-format-connected =  <label-connected>
+format-connected = 
 format-connected-foreground = ${colors.secondary}
-label-connected = IP %local_ip%
-label-connected-foreground = ${colors.foreground}
 format-connected-padding = 0
 
-format-disconnected =  <label-disconnected>
-format-disconnected-foreground = ${colors.secondary}
-label-disconnected = 
-label-disconnected-foreground = ${colors.alert}
+format-disconnected =  
+format-disconnected-foreground = ${colors.alert}
 format-disconnected-padding = 0
 
 [module/cpu]

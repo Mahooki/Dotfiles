@@ -7,5 +7,5 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-polybar bar1 &
-polybar bar2 &
+polybar bar1 2>/tmp/polybar1.log &
+polybar bar2 2>/tmp/polybar2.log &

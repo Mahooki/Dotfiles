@@ -2,6 +2,9 @@
 !Xft.dpi: 92 - Benq Zowie 1080p @ 24 inch
 Xft.dpi: 110
 Xft.antialias: 1
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
