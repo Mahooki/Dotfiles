@@ -1,0 +1,93 @@
+#! /bin/sh
+##################
+#    BSPWMRC     #
+##################
+
+### Rules ###
+# bspc rule -a Chrome desktop='^2'
+bspc rule -a Plank layer=above manage=on border=off
+
+### Autostart ###
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# Load Xresources - I think this is already done in xinitrc(?)
+# xrdb ~/.Xresources &
+
+### Monitors ###
+if [[ $(hostname) == 'noah-arch-desktop' ]]; then
+  bspc monitor DP-0 -d 1 2 3 4 5 6
+  bspc monitor DVI-D-0 -d 7 8 9 0
+fi
+
+xrandr --output DP-0 --primary --mode 2560x1440 --rate 144 \
+  --output DVI-D-0 --mode 1920x1080 --right-of DP-0 --rate 144
+
+# Load wallpaper
+feh --bg-scale --no-fehbg ~/Pictures/wallpapers/arch-dark-side.jpeg
+
+# POLYBAR: Kill prior instances and launch polybars
+$HOME/.config/polybar/launch.sh
+
+# PLANK: Start plank docks
+$HOME/.config/plank/launch.sh
+
+### Global settings ###
+
+bspc config automatic_scheme alternate
+bspc config initial_polarity second_child
+bspc config pointer_modifier shift
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+bspc config click_to_focus none
+bspc config focus_follows_pointer true
+
+# For hot plugging monitors
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+bspc config merge_overlapping_montitors true
+
+# Window colors (Gruvbox Dark)
+# Foreground
+bspc config normal_border_color "#1d2021"
+# DarkCyan
+bspc config active_border_color "#689d6a"
+# DarkGreen
+bspc config focused_border_color "#98971a"
+# DarkYellow
+bspc config presel_feedback_color "#d79921"
+# DarkRed
+bspc config urgent_border_color "#cc241d"
+
+# Window settings
+bspc config top_padding 0
+bspc config bottom_padding 0
+bspc config left_padding 0
+bspc config right_padding 0
+bspc config border_width 2
+bspc config window_gap 8
+# bspc config split_ratio          0.52
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+
+### Other settings ###
+
+### Compton ###
+
+# Specify refresh rate of the screen.
+# If not specified or 0, compton will try detecting this with X RandR extension.
+refresh-rate = 0;
+
+# Set VSync method. VSync methods currently available:
+# none: No VSync
+# drm: VSync with DRM_IOCTL_WAIT_VBLANK. May only work on some drivers.
+# opengl: Try to VSync with SGI_video_sync OpenGL extension. Only work on some drivers.
+# opengl-oml: Try to VSync with OML_sync_control OpenGL extension. Only work on some drivers.
+# opengl-swc: Try to VSync with SGI_swap_control OpenGL extension. Only work on some drivers. Works only with GLX backend. Known to be most effective on many drivers. Does not actually control paint timing, only buffer swap is affected, so it doesn’t have the effect of --sw-opti unlike other methods. Experimental.
+# opengl-mswc: Try to VSync with MESA_swap_control OpenGL extension. Basically the same as opengl-swc above, except the extension we use.
+# (Note some VSync methods may not be enabled at compile time.)
+vsync = "none";
+
+# Painting on X Composite overlay window. Recommended.
+paint-on-overlay = true;
+
