@@ -5,7 +5,7 @@
 
 ### Rules ###
 # bspc rule -a Chrome desktop='^2'
-# bspc rule -a Plank layer=above manage=on border=off
+bspc rule -a Plank layer=above manage=on border=off
 
 ### Autostart ###
 pgrep -x sxhkd > /dev/null || sxhkd &
