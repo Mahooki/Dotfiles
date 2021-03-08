@@ -1,7 +1,5 @@
 [Desktop Entry]
 Type=Application
-Exec=plank -n dock2
-Hidden=false
-NoDisplay=false
+Exec=./setup-monitors.sh
 X-GNOME-Autostart-enabled=true
-Name=Dock 2
+Name=Setup Monitors

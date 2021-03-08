@@ -63,7 +63,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'machakann/vim-highlightedyank'
-let g:highlightedyank_highlight_duration = 200
+let g:highlightedyank_highlight_duration = 250
 
 " lean & mean status/tabline for vim that's light as air
 " https://github.com/bling/vim-airline
@@ -165,6 +165,9 @@ endfor
 
 set background=dark
 highlight HighlightedyankRegion cterm=reverse gui=reverse
+augroup vimrc-highlightedyank
+  autocmd ColorScheme gruvbox-material highlight HighlightedyankRegion ctermbg=237 guibg=#41423a
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                                                "
@@ -369,7 +372,7 @@ vnoremap < <gv
 noremap Y y$
 
 " Allows for copy and paste into the OS clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Copy (Yank) selected text to the OS clipboard
 noremap <leader>y "+y

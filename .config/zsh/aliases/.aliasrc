@@ -2,6 +2,9 @@
 #    ALIASRC     #
 ##################
 
+# Nvim instead of Vim
+alias vim="nvim"
+
 # Original aliases
 alias open="xdg-open"
 alias pbcopy='xclip -selection clipboard'
