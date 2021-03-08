@@ -63,8 +63,6 @@ dotfiles submodule update --recursive --remote
 
 ## SSH and Git Config
 
-I have checked in my personal [~/.ssh/config](.ssh/config) with local hostnames. Remove if you are not me :)
-
 My [~/.gitconfig](.gitconfig) switches the git user and ssh key depending on the file path of the repository.
 Anything repositories under `~/personal` will use [~/.gitconfig-personal](.gitconfig-personal) and any under `~/work`
 will use [~/.gitconfig-work](.gitconfig-work).
