@@ -8,7 +8,7 @@
 # Editor
 export EDITOR="vim"
 export VISUAL="vim"
-export TERMINAL="kitty"
+export TERMINAL="gnome-terminal"
 export BROWSER="chrome"
 export WM="bspwm"
 
