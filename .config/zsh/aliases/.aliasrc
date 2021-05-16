@@ -13,13 +13,13 @@ alias pipes='pipes.sh -t 3 -r 0'
 alias diff="code -d"
 alias ssh="kitty +kitten ssh"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # System:
 alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
 alias du='du -sh'
-alias df='df -h'
+# alias df='df -h'
 
 # Configuration Files:
 alias aliasrc='$EDITOR $ZDOTDIR/aliases/.aliasrc'
@@ -56,4 +56,4 @@ alias restorepacman-filter-foreign='pacman -S --needed $(comm -12 <(pacman -Slq 
 # and remove all the packages that are not mentioned in it:
 alias restorepacman-remove-extras='pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort $HOME/.pacman-packages))'
 
-compdef dotfiles='git'
+compdef df='git'
